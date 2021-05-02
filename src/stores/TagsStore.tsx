@@ -1,15 +1,18 @@
 import { observable, action } from 'mobx'
 import Tag from '../types/Tag'
+import {getTags, setTags } from '../model'
+import UserStore from './UserStore'
 class TagArrayStore {
-    private initTags = [
-        { id: 1, name: '衣' },
-        { id: 2, name: '食' },
-        { id: 3, name: '住' },
-        { id: 4, name: '行' }
-    ]
-    @observable tags: Tag[] = JSON.parse(window.localStorage.getItem('tags') || JSON.stringify(this.initTags))
+
+    @observable tags: Tag[] = []
 
     @observable selectedTags = [] as Tag[]
+
+    @action initTags = ()=>{
+        getTags(UserStore.getUserName())
+          .then((res:any)=> this.tags = res.data)
+          .catch(error => console.log(error))
+    }
 
     @action changeSelectedTags = (newSelectedTags: Tag[]) => {
         this.selectedTags = newSelectedTags
@@ -41,8 +44,9 @@ class TagArrayStore {
     }
 
     private saveTagsinLoacl = () => {
-        const tagsStr = JSON.stringify(this.tags)
-        window.localStorage.setItem('tags', tagsStr)
+        setTags(UserStore.getUserName(), this.tags)
+        .then(()=>{console.log("update success")})
+        .catch((error)=>console.log(error))
     }
 
 

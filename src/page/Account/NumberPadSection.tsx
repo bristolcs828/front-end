@@ -110,8 +110,7 @@ const Component: React.FC = observer(() => {
             const comfirmSummit = window.confirm('是否添加此记录')
             if (comfirmSummit) {
                 addRecord()
-                window.alert('添加成功')
-                window.location.reload()
+                window.alert('add Success')
             }
         }
 

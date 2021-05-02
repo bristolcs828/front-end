@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Account from './page/Account'
 import Statistics from './page/Statistics'
@@ -8,10 +8,23 @@ import Tag from './page/Tag'
 import Login from './page/Login'
 import Register from './page/Register'
 import 'antd/dist/antd.css'
+import { observer } from 'mobx-react'
+import useStores from './stores'
 const AppWrapper = styled.div`
    color: #333;
 `
-function App(props:any) {
+const App= observer( ()=> {
+   const { initTags } = useStores().TagsStore
+   const { initList } =useStores().RecordsStore
+   const { userName } = useStores().UserStore
+   useEffect(()=>{
+    if(userName){
+      initTags()
+      initList()
+     }
+   },[initList, initTags, userName])
+
+   
   return (
     <AppWrapper>
       <Router>
@@ -36,6 +49,6 @@ function App(props:any) {
       </Router>
     </AppWrapper>
   );
-}
+})
 
 export default App;

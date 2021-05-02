@@ -1,6 +1,8 @@
 import { observable, action } from 'mobx'
 import Tag from '../types/Tag'
 import TagsStore from './TagsStore'
+import {getList, setList } from '../model'
+import UserStore from './UserStore'
 type Record = {
     tags: Tag[],
     notes: string,
@@ -11,7 +13,7 @@ type Record = {
 }
 
 class RecordsStore {
-    @observable recordsList: Record[] = JSON.parse(window.localStorage.getItem('recordsList') || JSON.stringify([]));
+    @observable recordsList: Record[] = [];
 
     @observable currentRecord: Record = {
         tags: [],
@@ -22,6 +24,13 @@ class RecordsStore {
         id: 0
     };
     @observable output: string = '0'
+
+    @action initList = ()=>{
+        getList(UserStore.getUserName())
+          .then((res:any)=> this.recordsList = res.data)
+          .catch(error => console.log(error))
+    } 
+
     @action setOutput = (newOutput: string) => {
         this.output = newOutput
     }
@@ -79,8 +88,9 @@ class RecordsStore {
         this.saveRecordList()
     }
     @action saveRecordList = () => {
-        const recordListsStr = JSON.stringify(this.recordsList)
-        window.localStorage.setItem('recordsList', recordListsStr)
+        setList(UserStore.getUserName(), this.recordsList)
+        .then(()=>{console.log("update success")})
+        .catch((error)=>console.log(error))
     }
 
 }

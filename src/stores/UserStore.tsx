@@ -7,7 +7,10 @@ class UserStore {
     @action setUserName = (userName: string)=>{
         this.userName = userName
     }
-
+    
+    @action getUserName(){
+        return this.userName || ''
+    }
     @action login = (userName:string, passWord:string)=>{
        return new Promise((resolve,reject)=>{
         login(userName, passWord)

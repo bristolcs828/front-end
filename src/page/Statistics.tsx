@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout'
 import Category from './Account/CategorySection'
 import styled from 'styled-components'
@@ -70,7 +70,7 @@ const Item = styled.div`
 
 const Component = observer(() => {
     const [deleteRecordClass, setDeleteRecordClass] = useState<number>(0)
-    const { recordsList, currentRecord, deleteRecord } = useStores().RecordsStore
+    const { recordsList, currentRecord, deleteRecord, initList } = useStores().RecordsStore
     const isDeleteSelected = (record: any) => {
         if (record.id === deleteRecordClass) {
             return 'selected'
@@ -78,6 +78,9 @@ const Component = observer(() => {
             return ''
         }
     }
+    useEffect(()=>{
+        initList()
+    },[recordsList, initList])
     const selectedRecords = recordsList.filter(record => record.category === currentRecord.category)
     let startX: number;
     let moveMar: number;

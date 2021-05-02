@@ -32,7 +32,6 @@ const Component = observer( (props:any) => {
     const { login, setUserName } = useStores().UserStore
     const onFinish = (values: any) => {
         const {password, username} = values
-        console.log(typeof password)
         login(username, password)
           .then((res:any)=> {
              const {data} = res
