@@ -5,18 +5,20 @@ import Statistics from './page/Statistics'
 import Tags from './page/Tags'
 import styled from 'styled-components'
 import Tag from './page/Tag'
+import Login from './page/Login'
+import Register from './page/Register'
+import 'antd/dist/antd.css'
 const AppWrapper = styled.div`
    color: #333;
 `
-function App() {
-
+function App(props:any) {
   return (
     <AppWrapper>
       <Router>
         <Switch>
-          <Route exact={true} path="/account">
-            <Account />
-          </Route>
+          <Route exact={true} path='/login' component={Login} />
+          <Route exact={true} path='/register' component={Register} />
+          <Route exact={true} path="/account" component={Account} />
           <Route exact={true} path="/tags/:tagId">
             <Tag />
           </Route>
