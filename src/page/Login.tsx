@@ -40,7 +40,8 @@ const Component = observer( (props:any) => {
                 props.history.push('/')
              }
              else{
-                window.alert("验证失败，用户名或密码错误")
+                // window.alert("验证失败，用户名或密码错误")
+                window.alert('Authentication failed, wrong username or password !!')
              }
           }) 
           .catch((error)=>{console.log(error)})

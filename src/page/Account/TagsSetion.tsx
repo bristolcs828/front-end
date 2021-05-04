@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import LongPress from '../../utils/longPress'
 import Tag from '../../types/Tag'

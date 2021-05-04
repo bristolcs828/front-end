@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { observer } from 'mobx-react'
 import useStores from '../stores'
 import Icon from '../components/Icon'
-import day from 'dayjs'
+// import day from 'dayjs'
 const Wrapper = styled.div`
       width:(100vw-1px);
       overflow:hidden;

@@ -32,7 +32,7 @@ const CategorySection = styled.section`
 const Component: React.FC = observer(() => {
     const { setCategory, currentRecord } = useStores().RecordsStore
     const category = currentRecord.category
-    const categoryMay = { '-': '支出', '+': '收入' }
+    const categoryMay = { '-': 'EXPENSES', '+': 'INCOME' }
     type CategoryType = keyof typeof categoryMay
     const [categoryList] = useState<CategoryType[]>(['+', '-'])
 

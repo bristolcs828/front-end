@@ -1,5 +1,5 @@
 class LongPress {
-    private timeOutEvent!: number;
+    private timeOutEvent!: any;
     touchEnd = () => {
         clearTimeout(this.timeOutEvent);
         if (this.timeOutEvent !== 0) {
@@ -7,7 +7,7 @@ class LongPress {
         }
         return false;
     };
-    touchStart = (fn?: Function) => {
+    touchStart = (fn?: any) => {
         this.timeOutEvent = setTimeout(() => {
             this.timeOutEvent = 0;
             if (fn) {

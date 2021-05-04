@@ -46,19 +46,19 @@ const Component = () => {
 
                     <NavLink to="/tags" exact={true} activeClassName="selected">
                         <Icon name='tags' />
-                        <span>标签</span>
+                        <span>Tags</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/account" activeClassName="selected">
                         <Icon name='account' />
-                        <span>记一笔</span>
+                        <span>Bookkeeping</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/statistics" activeClassName="selected">
                         <Icon name='statistics' />
-                        <span>统计</span></NavLink>
+                        <span>Statistics</span></NavLink>
                 </li>
             </ul>
         </Nav>

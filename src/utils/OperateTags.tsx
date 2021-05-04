@@ -1,9 +1,8 @@
-import useStores from '../stores'
 import Tag from '../types/Tag'
 // const 
 class OperateTags {
     onAddTag = (tags: Tag[], addTag: Function) => {
-        const newTagName = window.prompt('要添加的新标签')
+        const newTagName = window.prompt('New tags to be added: ')
         if (newTagName !== null) {
             const lastId: number = tags.length >= 1 ?
                 tags[tags.length - 1].id : 0
@@ -11,7 +10,7 @@ class OperateTags {
         }
     }
     onDeleteTag = (item: Tag, delecteTag: Function, fn?: Function) => {
-        let confirmDelete: boolean = window.confirm(`是否删除'${item.name}'这个标签`)
+        let confirmDelete: boolean = window.confirm(`Are you sure to delete tag: '${item.name}'`)
         if (confirmDelete) {
             delecteTag(item)
             if (fn) { fn() }

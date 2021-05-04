@@ -49,11 +49,11 @@ const Component: React.FC = () => {
             <TopBar>
                 <Link to='/tags'>  <Icon name="left" /></Link>
 
-                <span>编辑标签</span>
+                <span>Edit Tags</span>
                 <Icon />
             </TopBar>
             <InputWrapper>
-                <Input spanText={'标签：' + tag.name} placeholder="编辑新标签名" onChange={modifyTagsName} />
+                <Input spanText={'Tag Name：' + tag.name} placeholder="编辑新标签名" onChange={modifyTagsName} />
             </InputWrapper>
             <Center>
                 <Space />
@@ -62,7 +62,7 @@ const Component: React.FC = () => {
                 <Button onClick={() => {
                     onDeleteTag(tag, delecteTag, redirectToTags)
 
-                }}>删除标签</Button>
+                }}>Detele Tags</Button>
             </Center>
 
 

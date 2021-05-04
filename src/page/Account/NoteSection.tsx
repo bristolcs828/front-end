@@ -1,4 +1,4 @@
-import React, { useState, useRef, ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler } from 'react';
 import styled from 'styled-components'
 import Input from '../../components/Input'
 import useStores from '../../stores'
@@ -19,8 +19,8 @@ const Component: React.FC = observer(() => {
 
     return (
         <NoteSection>
-            <Input spanText="备注" type="text"
-                placeholder="在这里添加备注"
+            <Input spanText="Notes" type="text"
+                placeholder="Add note here"
                 onChange={getNote}
                 value={note} />
         </NoteSection>
