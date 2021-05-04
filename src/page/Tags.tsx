@@ -50,7 +50,7 @@ const Component = observer(() => {
         <Space />
         <Button onClick={() => {
           onAddTag(tags, addTag)
-        }}>新增标签</Button>
+        }}>Add new tag</Button>
       </Center>
     </Layout>
   )
