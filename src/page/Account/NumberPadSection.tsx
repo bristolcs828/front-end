@@ -101,13 +101,13 @@ const Component: React.FC = observer(() => {
     }
     const summitRecord = () => {
         if (currentRecord.tags.length <= 0) {
-            window.alert('请选择标签')
+            window.alert('Please select at least one tag')
             return false
         } if (output === "0") {
-            window.alert('请输入金额')
+            window.alert('Please enter the amount to be recorded')
             return false
         } else {
-            const comfirmSummit = window.confirm('是否添加此记录')
+            const comfirmSummit = window.confirm('Add this record or not')
             if (comfirmSummit) {
                 addRecord()
                 window.alert('add Success')
