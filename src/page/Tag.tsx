@@ -53,7 +53,7 @@ const Component: React.FC = () => {
                 <Icon />
             </TopBar>
             <InputWrapper>
-                <Input spanText={'Tag Name：' + tag.name} placeholder="编辑新标签名" onChange={modifyTagsName} />
+                <Input spanText={'Tag Name：' + tag.name} placeholder="Edit new tag name" onChange={modifyTagsName} />
             </InputWrapper>
             <Center>
                 <Space />
