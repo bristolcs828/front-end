@@ -84,13 +84,13 @@ const Component: React.FC = observer(() => {
                 } else {
                     return output + text
                 }
-            case '删除':
+            case 'DELETE':
                 if (output.length <= 1) {
                     return '0'
                 } else {
                     return output.slice(0, -1)
                 }
-            case '清空':
+            case 'CLEAR':
                 return '0'
             case 'ok':
                 summitRecord()
@@ -146,11 +146,11 @@ const Component: React.FC = observer(() => {
                 <button>1</button>
                 <button>2</button>
                 <button>3</button>
-                <button>删除</button>
+                <button>DELETE</button>
                 <button>4</button>
                 <button>5</button>
                 <button>6</button>
-                <button>清空</button>
+                <button>CLEAR</button>
                 <button>7</button>
                 <button>8</button>
                 <button>9</button>
