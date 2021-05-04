@@ -73,7 +73,7 @@ const Component: React.FC = observer(() => {
     }
     return (
         <TagsSection >
-            <div>(长按标签可删除)</div>
+            <div>(Long press to delete tags)</div>
             <ol>
                 {tags.map((item) => {
                     return (<li key={item.id}
@@ -88,7 +88,7 @@ const Component: React.FC = observer(() => {
             </ol>
             <button onClick={() => {
                 onAddTag(tags, addTag)
-            }} >新增标签</button>
+            }} >Add new tag </button>
         </TagsSection >
     )
 })
