@@ -11,10 +11,9 @@ import styled from 'styled-components'
 const CategoryWrapper = styled.div`
 background:#c4c4c4;`
 
-const Component = observer( (props:any) => {
-    const { userName } = useStores().UserStore 
-    console.log(userName)
-    if(!userName){
+const Component = observer((props: any) => {
+    const { userName } = useStores().UserStore
+    if (!userName) {
         props.history.push('/login')
     }
     return (

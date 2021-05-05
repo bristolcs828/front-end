@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx'
 import Tag from '../types/Tag'
-import {getTags, setTags } from '../model'
+import { getTags, setTags } from '../model'
 import UserStore from './UserStore'
 class TagArrayStore {
 
@@ -8,10 +8,10 @@ class TagArrayStore {
 
     @observable selectedTags = [] as Tag[]
 
-    @action initTags = ()=>{
+    @action initTags = () => {
         getTags(UserStore.getUserName())
-          .then((res:any)=> this.tags = res.data)
-          .catch(error => console.log(error))
+            .then((res: any) => this.tags = res.data)
+            .catch(error => console.log(error))
     }
 
     @action changeSelectedTags = (newSelectedTags: Tag[]) => {
@@ -45,8 +45,8 @@ class TagArrayStore {
 
     private saveTagsinLoacl = () => {
         setTags(UserStore.getUserName(), this.tags)
-        .then(()=>{console.log("update success")})
-        .catch((error)=>console.log(error))
+            .then(() => { console.log("update success") })
+            .catch((error) => console.log(error))
     }
 
 

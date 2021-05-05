@@ -13,18 +13,20 @@ import useStores from './stores'
 const AppWrapper = styled.div`
    color: #333;
 `
-const App= observer( ()=> {
-   const { initTags } = useStores().TagsStore
-   const { initList } =useStores().RecordsStore
-   const { userName } = useStores().UserStore
-   useEffect(()=>{
-    if(userName){
+const App = observer(() => {
+  const { initTags } = useStores().TagsStore
+  const { initList } = useStores().RecordsStore
+  const { userName } = useStores().UserStore
+
+
+  useEffect(() => {
+    if (userName) {
       initTags()
       initList()
-     }
-   },[initList, initTags, userName])
+    }
+  }, [initList, initTags, userName])
 
-   
+
   return (
     <AppWrapper>
       <Router>
