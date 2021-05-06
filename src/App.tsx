@@ -45,7 +45,7 @@ const App = observer(() => {
           </Route>
           <Redirect exact from="/" to="/account" />
           <Route path='*' >
-            <div>你访问的页面不存在</div>
+            <div>The page you visited does not exist!!</div>
           </Route>
         </Switch>
       </Router>

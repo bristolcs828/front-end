@@ -9,7 +9,7 @@ import { observer } from 'mobx-react'
 
 import styled from 'styled-components'
 const CategoryWrapper = styled.div`
-background:#c4c4c4;`
+background:#4ba398;`
 
 const Component = observer((props: any) => {
     const { userName } = useStores().UserStore

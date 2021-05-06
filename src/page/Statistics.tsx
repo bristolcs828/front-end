@@ -112,7 +112,7 @@ const Component = observer(() => {
                                 {record.notes}
                             </div>
                             <div className="amount">
-                                ¥{record.amonut}
+                                ￡{record.amonut}
                             </div>
                             <div className="delete" onClick={() => { deleteRecord(record) }} ><Icon name="delete"></Icon></div>
                         </Item>
