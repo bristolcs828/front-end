@@ -5,11 +5,12 @@ try { requireAll(require.context('../icons', true, /\.svg$/)); } catch (error) {
 
 type Props = {
     name?: string;
+    noClass?: Boolean;
 }
 const Component = (props: Props) => {
 
     return (
-        <svg className='icon'>
+        <svg className={props.noClass ? 'badge' : 'icon'}>
             {props.name && <use xlinkHref={'#' + props.name} />}
         </svg>
     )

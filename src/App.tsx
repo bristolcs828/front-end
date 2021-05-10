@@ -17,14 +17,15 @@ const App = observer(() => {
   const { initTags } = useStores().TagsStore
   const { initList } = useStores().RecordsStore
   const { userName } = useStores().UserStore
-
+  const { initSign } =useStores().SignStore
 
   useEffect(() => {
     if (userName) {
       initTags()
       initList()
+      initSign()
     }
-  }, [initList, initTags, userName])
+  }, [initList, initSign, initTags, userName])
 
 
   return (

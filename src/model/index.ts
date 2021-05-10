@@ -50,3 +50,19 @@ export const setTags = (userName: string, newTags: Array<any>)=>{
         .catch((error)=> { reject(error) })
     })
  }
+
+ export const getSign = (userName: string)=>{
+    return new Promise((resolve, reject)=>{
+        axios.post(`${baseUrl}/sign`,{userName})
+        .then((res)=> { resolve(res) })
+        .catch((error)=> { reject(error) })
+    })
+ }
+
+ export const setSign = (userName: string, newSign: any )=>{
+    return new Promise((resolve, reject)=>{
+        axios.post(`${baseUrl}/sign/update`,{userName, newSign})
+        .then((res)=> { resolve(res) })
+        .catch((error)=> { reject(error) })
+    })
+ }
