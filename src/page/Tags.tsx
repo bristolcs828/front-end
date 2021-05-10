@@ -13,7 +13,7 @@ const TagList = styled.ol`
     font-size: 16px; 
     background:white;
     > li{
-      border-bottom: 1px solid #d5d5d9;
+      border-bottom: 1px solid #4ba398;
       line-height: 20px;
       margin-left: 16px;
      
@@ -27,13 +27,32 @@ const TagList = styled.ol`
     }
   `;
 
+const Topbar = styled.div`
+  background: #4ba398;
+  height: 50px;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+`
 
+const Show = styled.div`
+  display: flex;
+  border: 1px solid red;
+  height: 50px;
+  bottom: 50px;
+`
 
 const Component = observer(() => {
   const { tags, addTag } = useStores().TagsStore
   const { onAddTag } = OperateTags
   return (
     <Layout>
+      <Topbar>
+        Manage My Tags
+      </Topbar>
       <TagList>
         {tags.map((item) =>
           <li key={item.id}>
@@ -52,6 +71,24 @@ const Component = observer(() => {
           onAddTag(tags, addTag)
         }}>Add new tag</Button>
       </Center>
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Space />
+      <Show>Badges: </Show>
+      <Show>Number of days signed in: </Show>
     </Layout>
   )
 })

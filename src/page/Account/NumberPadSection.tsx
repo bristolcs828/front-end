@@ -92,7 +92,7 @@ const Component: React.FC = observer(() => {
                 }
             case 'CLEAR':
                 return '0'
-            case 'ok':
+            case 'AFFIRM':
                 summitRecord()
                 return output
         }
@@ -154,7 +154,7 @@ const Component: React.FC = observer(() => {
                 <button>7</button>
                 <button>8</button>
                 <button>9</button>
-                <button className='summit'>ok</button>
+                <button className='summit'>AFFIRM</button>
                 <button className="zero">0</button>
                 <button>.</button>
 
