@@ -90,6 +90,7 @@ const getCurDate = ()=>{
 
 const Component = observer(() => {
   const { tags, addTag } = useStores().TagsStore
+  // @ts-ignore
   const { sign, setSignMap, signMap, addSign } = useStores().SignStore
   const { onAddTag } = OperateTags
 
@@ -113,6 +114,7 @@ const Component = observer(() => {
   
   console.log(signMap)
 
+  // @ts-ignore
   return (
     <Layout>
       <Topbar>
@@ -139,12 +141,12 @@ const Component = observer(() => {
      <BottomWrapper>
        <SignWrapper>
          {
-           hasSign ? <div>已签到</div> : <div onClick={handleSign}>签到</div>
+           hasSign ? <div>Checked</div> : <div onClick={handleSign}>Clink here to check</div>
          }
-          <div>{`已经签到${sign}天`}</div>
+          <div>{`Already checked for ${sign} days`}</div>
        </SignWrapper>
        <BadgeWrap>
-         <Badgeheader>现在拥有的徽章</Badgeheader>
+         <Badgeheader>Badges owned</Badgeheader>
          <BadgeBody>
            {
              signMap.map(item => <Badge>
